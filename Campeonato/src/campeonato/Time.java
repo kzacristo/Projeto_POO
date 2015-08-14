@@ -2,15 +2,16 @@
 package campeonato;
 
 
-public class CadastroTime {
+public class Time {
     
     public String nomeTime;
-    public String sigla;    
+    public String sigla;
+    public int inscrisao;
 
-    public CadastroTime() {
+    public Time() {
     }
 
-    public CadastroTime(String nomeTime, String sigla) {
+    public Time(String nomeTime, String sigla) {
         this.nomeTime = nomeTime;
         this.sigla = sigla;
     }
@@ -30,6 +31,13 @@ public class CadastroTime {
     public void setSigla(String sigla) {
         this.sigla = sigla;
     }      
-  
+
+    public int getInscrisao() {
+        return inscrisao;
+    }
+
+    public void setInscrisao(int inscrisao) {
+        this.inscrisao = inscrisao;
+    }    
     
 }

@@ -11,6 +11,7 @@ package campeonato;
  */
 public class Jogador extends Time{
     
+    private int codigo;
     private String nome;
     private String cpf;
     private String rg;
@@ -18,8 +19,9 @@ public class Jogador extends Time{
     private int numeroCamisa;
     private String endereco;
 
-    public Jogador(String nome, String cpf, String rg, String telefone, int numeroCamisa, String endereco) {
+    public Jogador(int codigo, String nome, String cpf, String rg, String telefone, int numeroCamisa, String endereco) {
         
+        this.codigo= codigo;
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -27,6 +29,14 @@ public class Jogador extends Time{
         this.numeroCamisa = numeroCamisa;
         this.endereco = endereco;
         
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {

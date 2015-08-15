@@ -1,6 +1,4 @@
-
 package campeonato;
-
 
 public class Time {
     
@@ -11,9 +9,10 @@ public class Time {
     public Time() {
     }
 
-    public Time(String nomeTime, String sigla) {
+    public Time(String nomeTime, String sigla, int inscrisao) {
         this.nomeTime = nomeTime;
         this.sigla = sigla;
+        this.inscrisao = inscrisao;
     }
 
     public String getNomeTime() {

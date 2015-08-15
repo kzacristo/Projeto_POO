@@ -47,6 +47,10 @@ public class JogadorDAO {
                     dic.setInt(8,novoJogador.getNumeroCamisa());
                     dic.setString(9,novoJogador.getEndereco());
   
+                    dic.setInt(1,novoTime.getInscrisao());
+                    dic.setString(2,novoTime.getNomeTime());
+                    dic.setString(3,novoTime.getSigla());
+                    
                 }    
                     
                     

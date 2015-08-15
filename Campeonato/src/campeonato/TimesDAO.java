@@ -37,7 +37,7 @@ public class TimesDAO {
                    
                 try(PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert)){
                     
-                    dic.setString(1,novoTime.getInscricao());
+                    dic.setInt(1,novoTime.getIn());
                     dic.setString(2,novoTime.getNomeTime());
                     dic.setString(3,novoTime.getSigla());
                     

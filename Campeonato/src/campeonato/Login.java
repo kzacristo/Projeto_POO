@@ -53,6 +53,11 @@ public class Login extends javax.swing.JFrame {
         jlmensagem.setText("Digite seu usuário e senha para efetuar login");
 
         jbEntrar.setText("Entrar");
+        jbEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEntrarActionPerformed(evt);
+            }
+        });
 
         jbCancelar.setText("Cancelar");
 
@@ -123,6 +128,10 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEntrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbEntrarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -8,39 +8,45 @@ import java.util.logging.*;
 
 public class JogadorDAO {
     
-     public interface timesDAO{
+     public interface jogadorDAO{
         
-        timesDAO create();
+        jogadorDAO create();
         
-        void insert(timesDAO inserir);
-        void update(timesDAO atualiza);
-        void delete(timesDAO deleta);
+        void insert(jogadorDAO inserir);
+        void update(jogadorDAO atualiza);
+        void delete(jogadorDAO deleta);
         
-         TimesDAO findByID (Integer id);
-         TimesDAO finfByCustomerNumber ( String customerNumber ) ;
+         JogadorDAO findByID (Integer id);
+         JogadorDAO finfByCustomerNumber ( String customerNumber ) ;
          
     }
     
-    public class JDBCtimesDAO extends TimesDAO{
+    public class JDBCjogadorDAO extends JogadorDAO{
         
-        public TimesDAO create(){
-            return new TimesDAO();
+        public JogadorDAO create(){
+            return new JogadorDAO();
             
          }
-        public void inserir(Time novoTime){
+        public void inserir(Jogador novoJogador){
             try{    
                 
                     ConnectFactori connect = new ConnectFactori();               
                 
                     Statement st = connect.createStatement();
-                    String insert = "INSERT INTO times VALUES (?,?,?);";
+                    String insert = "INSERT INTO times VALUES (?,?,?,?,?,?,?);";
                    
                 try(PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert)){
                     
-                    dic.setString(1,novoTime.getInscricao());
-                    dic.setString(2,novoTime.getNomeTime());
-                    dic.setString(3,novoTime.getSigla());
-                    
+                    dic.setInt(1,novoJogador.getCodigo());
+                    dic.setString(2,novoJogador.getNome());
+                    dic.setString(3,novoJogador.getRg());
+                    dic.setString(4,novoJogador.getNomeTime());
+                    dic.setString(5,novoJogador.getSigla());
+                    dic.setString(6,novoJogador.getCpf());
+                    dic.setString(7,novoJogador.getTelefone());
+                    dic.setInt(8,novoJogador.getNumeroCamisa());
+                    dic.setString(9,novoJogador.getEndereco());
+  
                 }    
                     
                     

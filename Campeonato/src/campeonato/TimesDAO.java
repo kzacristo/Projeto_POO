@@ -27,7 +27,7 @@ public class TimesDAO {
             return new TimesDAO();
             
          }
-        public void inserir(timesDAO inserir){
+        public void inserir(Time novoTime){
             try{    
                 
                     ConnectFactori connect = new ConnectFactori();               
@@ -37,9 +37,9 @@ public class TimesDAO {
                    
                 try(PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert)){
                     
-                    dic.setString(1,JT_inscricao());
-                    dic.setString(2,JT_nomeTime());
-                    dic.setString(3,JT_cigla());
+                    dic.setString(1,novoTime.getInscricao());
+                    dic.setString(2,novoTime.getNomeTime());
+                    dic.setString(3,novoTime.getSigla());
                     
                 }    
                     

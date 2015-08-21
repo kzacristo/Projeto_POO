@@ -1,6 +1,8 @@
 
-package campeonato;
+package model;
 
+import model.ConnectFactori;
+import controller.Time;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -38,8 +40,7 @@ public class TimesDAO {
                 try(PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert)){
                     
 
-                    dic.setInt(1,novoTime.getInscrisao());
-                    dic.setInt(1,novoTime.getIn());
+                    dic.setInt(1,novoTime.getInscrisao());                  
                     dic.setString(2,novoTime.getNomeTime());
                     dic.setString(3,novoTime.sigla);
 

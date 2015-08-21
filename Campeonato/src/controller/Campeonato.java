@@ -1,5 +1,5 @@
 
-package campeonato;
+package controller;
 
 public class Campeonato {
 

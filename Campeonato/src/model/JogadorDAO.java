@@ -1,6 +1,9 @@
 
-package campeonato;
+package model;
 
+import model.ConnectFactori;
+import controller.Jogador;
+import controller.Time;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -47,9 +50,9 @@ public class JogadorDAO {
                     dic.setInt(8,novoJogador.getNumeroCamisa());
                     dic.setString(9,novoJogador.getEndereco());
   
-                    dic.setInt(1,novoTime.getInscrisao());
-                    dic.setString(2,novoTime.getNomeTime());
-                    dic.setString(3,novoTime.getSigla());
+                    dic.setInt(1,novoJogador.getInscrisao());
+                    dic.setString(2,novoJogador.getNomeTime());
+                    dic.setString(3,novoJogador.getSigla());
                     
                 }    
                     

@@ -1,4 +1,4 @@
-package campeonato;
+package controller;
 
 public class Time {
     

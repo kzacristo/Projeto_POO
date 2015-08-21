@@ -1,7 +1,6 @@
 
 package model;
 
-import model.ConnectFactori;
 import controller.Jogador;
 import controller.Time;
 import java.sql.PreparedStatement;
@@ -31,6 +30,7 @@ public class JogadorDAO {
             
          }
         public void inserir(Jogador novoJogador){
+            
             try{    
                 
                     ConnectFactori connect = new ConnectFactori();               
@@ -38,7 +38,7 @@ public class JogadorDAO {
                     Statement st = connect.createStatement();
                     String insert = "INSERT INTO times VALUES (?,?,?,?,?,?,?);";
                    
-                try(PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert)){
+                    PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert);
                     
                     dic.setInt(1,novoJogador.getCodigo());
                     dic.setString(2,novoJogador.getNome());
@@ -54,7 +54,7 @@ public class JogadorDAO {
                     dic.setString(2,novoJogador.getNomeTime());
                     dic.setString(3,novoJogador.getSigla());
                     
-                }    
+                
                     
                     
             }catch(SQLException ex){

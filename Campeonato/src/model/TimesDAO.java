@@ -1,7 +1,6 @@
 
 package model;
 
-import model.ConnectFactori;
 import controller.Time;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -30,24 +29,19 @@ public class TimesDAO {
             
          }
         public void inserir(Time novoTime){
-            try{    
-                
+            
+            try{                    
                     ConnectFactori connect = new ConnectFactori();               
                 
                     Statement st = connect.createStatement();
                     String insert = "INSERT INTO times VALUES (?,?,?);";
                    
-                try(PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert)){
+                    PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert);
                     
-
                     dic.setInt(1,novoTime.getInscrisao());                  
                     dic.setString(2,novoTime.getNomeTime());
                     dic.setString(3,novoTime.sigla);
 
-                    
-        
-                }    
-                    
                     
             }catch(SQLException ex){
                 Logger.getLogger(Time.class.getName()).log(Level.SEVERE, null, ex);

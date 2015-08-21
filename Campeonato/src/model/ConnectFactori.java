@@ -3,10 +3,10 @@
 package model;
 
 import java.sql.*;
-import javax.swing.JOptionPane;
 
 public class ConnectFactori{
     
+    @SuppressWarnings("empty-statement")
     public static Connection getPostgresSQLConnection(){
         Connection connect = null;
         
@@ -17,7 +17,7 @@ public class ConnectFactori{
             connect = DriverManager.getConnection("jdbc:postgresql://localhost:5432/campeonatoIFSP","postgres","0");
         
         }
-        catch(Exception Ex){
+        catch(ClassNotFoundException | SQLException Ex){
             
             System.out.println("Não estabelecido coneção");
         };
@@ -25,13 +25,9 @@ public class ConnectFactori{
         return connect;
     }
 
-    Statement createStatement() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
-    Statement createStatement() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
     
     

@@ -1,9 +1,9 @@
 
 package view;
 
-public class CadastroFuncionario extends javax.swing.JFrame {
+public class JFCadastroFuncionario extends javax.swing.JFrame {
 
-    public CadastroFuncionario() {
+    public JFCadastroFuncionario() {
         initComponents();
     }
 
@@ -145,7 +145,7 @@ public class CadastroFuncionario extends javax.swing.JFrame {
        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroFuncionario().setVisible(true);
+                new JFCadastroFuncionario().setVisible(true);
             }
         });
     }

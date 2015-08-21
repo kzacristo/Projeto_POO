@@ -2,10 +2,12 @@
 package model;
 
 import controller.Time;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.*;
+import org.postgresql.core.ConnectionFactory;
 
 public class TimesDAO {
     
@@ -28,26 +30,27 @@ public class TimesDAO {
             return new TimesDAO();
             
          }
-        public void inserir(Time novoTime){
+        public void inserir(Time novoTime) throws SQLException{
+            try{
+            Connection connec =  ConnectFactori.getPostgresSQLConnection();
             
-            try{                    
-                    ConnectFactori connect = new ConnectFactori();               
-                
-                    Statement st = connect.createStatement();
-                    String insert = "INSERT INTO times VALUES (?,?,?);";
-                   
-                    PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert);
-                    
-                    dic.setInt(1,novoTime.getInscrisao());                  
-                    dic.setString(2,novoTime.getNomeTime());
-                    dic.setString(3,novoTime.sigla);
-
-                    
+            Statement st = connec.createStatement();
+            
+            String insert = "INSERT INTO club VALUES (?,?,?);";
+            
+            PreparedStatement sql = connec.prepareStatement(insert);
+            
+            sql.setString(1,novoTime.getNomeTime());
+            sql.setString(2,novoTime.getSigla());
+            sql.setInt(3,novoTime.getInscrisao());
+        
+            
+            
             }catch(SQLException ex){
                 Logger.getLogger(Time.class.getName()).log(Level.SEVERE, null, ex);
-            }   
-         }
-        
+        }
         
     }
+}  
+    
 }

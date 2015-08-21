@@ -3,6 +3,7 @@ package model;
 
 import controller.Jogador;
 import controller.Time;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -33,12 +34,12 @@ public class JogadorDAO {
             
             try{    
                 
-                    ConnectFactori connect = new ConnectFactori();               
+                    Connection connec =  ConnectFactori.getPostgresSQLConnection();              
                 
-                    Statement st = connect.createStatement();
+                    Statement st = connec.createStatement();
                     String insert = "INSERT INTO times VALUES (?,?,?,?,?,?,?);";
                    
-                    PreparedStatement dic = (PreparedStatement) connect.prepareStatement(insert);
+                    PreparedStatement dic = (PreparedStatement) connec.prepareStatement(insert);
                     
                     dic.setInt(1,novoJogador.getCodigo());
                     dic.setString(2,novoJogador.getNome());

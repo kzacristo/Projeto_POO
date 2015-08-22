@@ -16,7 +16,6 @@ public class JFCadastroFuncionario extends javax.swing.JFrame {
         jlRg = new javax.swing.JLabel();
         jlTelefone = new javax.swing.JLabel();
         jEndereco = new javax.swing.JLabel();
-        jtfNome = new javax.swing.JTextField();
         jtfRg = new javax.swing.JTextField();
         jtfTelefone = new javax.swing.JTextField();
         jtfEndereco = new javax.swing.JTextField();
@@ -43,6 +42,11 @@ public class JFCadastroFuncionario extends javax.swing.JFrame {
         jEndereco.setText("Endereço :");
 
         jtfNome.setColumns(12);
+        jtfNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfNomeActionPerformed(evt);
+            }
+        });
 
         jtfRg.setColumns(12);
 
@@ -142,6 +146,10 @@ public class JFCadastroFuncionario extends javax.swing.JFrame {
      
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jtfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfNomeActionPerformed
+
     public static void main(String args[]) {
        
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -162,7 +170,7 @@ public class JFCadastroFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jlTime;
     private javax.swing.JLabel jlTitulo;
     private javax.swing.JTextField jtfEndereco;
-    private javax.swing.JTextField jtfNome;
+    public static final transient javax.swing.JTextField jtfNome = new javax.swing.JTextField();
     private javax.swing.JTextField jtfRg;
     private javax.swing.JTextField jtfTelefone;
     // End of variables declaration//GEN-END:variables

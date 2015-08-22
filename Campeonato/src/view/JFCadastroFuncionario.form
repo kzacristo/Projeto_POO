@@ -156,6 +156,12 @@
       <Properties>
         <Property name="columns" type="int" value="12"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtfNomeActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="153"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jtfRg">
       <Properties>
